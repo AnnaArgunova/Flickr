@@ -1,1 +1,1 @@
-https://github.com/AnnaArgunova/Flickr
+https://annaargunova.github.io/Flickr/
