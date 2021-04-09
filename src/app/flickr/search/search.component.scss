@@ -1,8 +1,17 @@
 .wrapper {
 
+  .active{
+    background-color: rgb(235, 229, 229);
+  }
+
+  .no-active{
+    background-color: white;
+  }
+
   form {
+    text-align: center;
     .input-search {
-      width: 88vw;
+      width: 85vw;
       height: 3vw;
       padding-left: 1vw;
     }
@@ -11,6 +20,7 @@
   .pagination{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin: 2vw;
     .item{
       margin: 0.2vw;
@@ -26,6 +36,7 @@
         background-color: rgb(235, 229, 229);
       }
     }
+
   }
 
   .cards {

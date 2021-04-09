@@ -1,15 +1,29 @@
 <div class="wrapper">
   <form>
     <label>
-      <input type="search" class="input-search" (keyup)='search($event)' placeholder="Find images">
+      <input type="text" class="input-search" (keyup)='search($event)' placeholder="Find images">
     </label>
   </form>
-  <div class="pagination" >
-    <div (click) = 'onPageChange(item+1)' class="item" *ngFor = 'let item of pages'>{{item+1}}</div>
-      </div>
+  <div class="pagination">
+<div *ngIf='keyword' class="item prev" (click)='prevPage()'>
+  <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0.896133 6.3293L6.44649 11.8643C6.62834 12.0455 6.92276 12.0452 7.1043 11.8634C7.28571 11.6815 7.28524 11.3869 7.10337 11.2055L1.88339 5.99998L7.10355 0.794437C7.2854 0.613032 7.28587 0.318634 7.10449 0.13676C7.01348 0.0455885 6.89426 2.83078e-06 6.77503 2.82035e-06C6.65611 2.80996e-06 6.53735 0.0452833 6.44651 0.135822L0.896133 5.67068C0.808548 5.75782 0.759399 5.87642 0.759399 5.99998C0.759399 6.12354 0.808688 6.24199 0.896133 6.3293Z" fill="#083B73"/>
+    </svg>
+    
+</div>
+    <div (click)='onPageChange(item+1)' class="item {{active == i? 'active': 'no-active'}}"
+      *ngFor='let item of pages; let i = index'>{{item+1}}</div>
+    <div *ngIf='keyword' class="item next" (click)='nextPage()'>
+      <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M7.10387 5.6707L1.55351 0.1357C1.37166 -0.0455414 1.07724 -0.0452367 0.895697 0.136638C0.714292 0.318488 0.714761 0.613073 0.896635 0.794455L6.11661 6.00002L0.896447 11.2056C0.714596 11.387 0.714128 11.6814 0.89551 11.8632C0.986517 11.9544 1.10574 12 1.22497 12C1.34389 12 1.46265 11.9547 1.55349 11.8642L7.10387 6.32932C7.19145 6.24218 7.2406 6.12358 7.2406 6.00002C7.2406 5.87646 7.19131 5.75801 7.10387 5.6707Z"
+          fill="#083B73" />
+      </svg>
+    </div>
+  </div>
   <p *ngIf='!keyword'>No images here. Would you try to search for anything else?</p>
-  <div class="cards">
-    <div class="photo-item" *ngFor='let image of images; let i = index'>
+  <div *ngIf='keyword' class="cards">
+    <div class="photo-item" *ngFor='let image of imagesPage; let i = index'>
       <div class="card">
         <div class="card-image">
           <img src="{{image.url}}_m.jpg" title="{{image.title}}">
