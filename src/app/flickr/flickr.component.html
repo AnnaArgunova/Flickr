@@ -1,0 +1,31 @@
+   
+<header>
+    <h1 class="title">{{title}}</h1>
+       <div class="auth">
+      <img src="../assets/images/avatar.png">
+    </div>
+  </header>
+  <main>
+    <nav class="nav">
+      <ul>
+        <li class="search" (click) = 'onChangeSidebar()'>
+          <div class="{{isSearch? 'active' :'no-active'}}">
+            <img src="../assets/images/search.png">
+          </div>
+        </li>
+        <li class="bookmarks" (click) = 'onChangeSidebar()'>
+          <div class="{{isBookmarck? 'active' :'no-active'}}">
+            <img  src="../assets/images/Bookmarks.png">
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <app-search *ngIf = 'isSearch'></app-search>
+      <app-bookmark *ngIf = 'isBookmarck'></app-bookmark>
+    </section>
+    
+  </main>
+  <footer>
+    <p>Copyrights</p>
+  </footer>

@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <form>
+    <label>
+      <input type="search" class="input-search" (keyup)='search($event)' placeholder="Find images">
+    </label>
+  </form>
+  <div class="pagination" >
+    <div (click) = 'onPageChange(item+1)' class="item" *ngFor = 'let item of pages'>{{item+1}}</div>
+      </div>
+  <p *ngIf='!keyword'>No images here. Would you try to search for anything else?</p>
+  <div class="cards">
+    <div class="photo-item" *ngFor='let image of images; let i = index'>
+      <div class="card">
+        <div class="card-image">
+          <img src="{{image.url}}_m.jpg" title="{{image.title}}">
+        </div>
+        <div class="button">
+          <button (click)='addBookmark(i, image.id)'>Bookmark it!</button>
+          <p>{{keyword}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

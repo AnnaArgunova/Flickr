@@ -1,0 +1,67 @@
+.wrapper {
+
+  form {
+    .input-search {
+      width: 88vw;
+      height: 3vw;
+      padding-left: 1vw;
+    }
+  }
+
+  .pagination{
+    display: flex;
+    justify-content: flex-end;
+    margin: 2vw;
+    .item{
+      margin: 0.2vw;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2vw;
+      border: 1px solid black;
+      width: 2vw;
+      height: 2vw;
+      &:hover{
+        background-color: rgb(235, 229, 229);
+      }
+    }
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .card {
+      margin: 2vw;
+      width: 23vw;
+      height: 50vh;
+      border: 1px solid black;
+
+      .card-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        overflow: hidden;
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+          min-height: 1.4vw;
+          min-width: 7vw;
+          overflow: hidden;
+          border: 1px solid black;
+          padding: 0 1vw;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

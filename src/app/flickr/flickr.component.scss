@@ -1,0 +1,59 @@
+header,
+footer {
+  background-color: rgb(214, 214, 214);
+  height: 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  height: 81vh;
+}
+
+section {
+  overflow-y: scroll;
+  height: 96%;
+  width: 100%;
+  padding: 1vw;
+}
+
+.nav {
+  border: 2px solid black;
+
+  ul {
+    padding: 0;
+    width: 7vw;
+
+  }
+
+  li {
+    list-style: none;
+    margin: 2vw 0;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5vw;
+      height: 5vw;
+      margin: 0 auto;
+      img{
+          width: 4vw;
+          height: 4vw;
+      }
+    }
+
+    .active{
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .no-active{
+        border: none;
+    }
+  }
+}

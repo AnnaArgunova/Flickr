@@ -1,0 +1,12 @@
+<div class="cards">
+<div class="photo-item" *ngFor = 'let item of bookmark'>
+    <div class="card">
+        <div class="card-image">
+            <img src="{{item.url}}_m.jpg" title="{{item.title}}">
+        </div>
+        <div class="button">
+            <button (click) = 'removeBookmark(item.id)'>Remove it!</button>
+           </div>
+    </div>
+</div>
+</div>
